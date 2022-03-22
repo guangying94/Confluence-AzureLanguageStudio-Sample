@@ -1,0 +1,8 @@
+datetime
+markdownify
+azure-storage-blob
+azure-identity
+beautifulsoup4
+urllib3
+lxml
+python-dotenv
