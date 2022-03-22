@@ -1,4 +1,4 @@
-# Confluence AzureLanguageStudio Sample
+# Confluence - Azure Language Studio Sample
 This is a demostration on extracting content from Confluence Server, and send the information to Azure Language Studio to overlay AI - [Custom Question Answering](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/question-answering/overview).
 
 ## Content
@@ -25,4 +25,12 @@ The logic is similar, but instead of crawling Confluence Server, Azure Functions
 The input can be generated from either custom script, or query Confluence Server database **(NOT RECOMMENDED)**. Sample query script is available [here](assets/query.sql).
 
 The automation can be triggered by Timer, using [Azure Logic Apps](https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-overview). Here's a sample flow, using SQL command above.
+
 ![image](assets/logicapp-flow.png)
+
+### Considerations
+1. The sample above is for demostration purposes, and is not meant for production use yet.
+2. Strongly encourage to leverage Confluence provided API instead of querying database directly.
+3. This sample is for Confluence Server. Similar concept can be applied on Confluence Cloud.
+4. Factor in consideration on complex responses, as Custom Question Answering supports markdown only. Content like videos etc shall be reference to external URL.
+5. The sample is based on simple content update routine. Do create your own workflow to factor in content creation process, like versioning, updates etc.
